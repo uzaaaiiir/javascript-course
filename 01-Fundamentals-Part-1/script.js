@@ -23,5 +23,16 @@ let person = "jonas";
 let PI = 3.14159;
 
 // Variable names need to be descriptive
-let myFristJob = "Programmer";
+let myFirstJob = "Programmer";
 let myCurrentJob = "Teacher";
+console.log(myFirstJob);
+
+// JavaScript Fundametals -- Part 1
+// VALUES and VARIABLE -- Questions
+let country = "Canada";
+let continent = "North America";
+let population = 38100000;
+
+console.log(country, continent, population);
+
+// DATA TYPES -- Questions
