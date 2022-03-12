@@ -161,4 +161,88 @@ console.log(now - 2030 > now - 2018);
 // NEW SECTION //
 /////////////////
 /* OPERATOR PRECEDENCE
+-- order in which operators are executed
  */
+/*
+const now = 2030;
+const ageUzair = now - 1999;
+const ageSarah = now - 2005;
+
+console.log(now - 1991 > now - 2018);
+
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10
+console.log(x, y);
+
+console.log(ageUzair);
+console.log(ageSarah);
+
+const averageAge = (ageUzair + ageSarah) / 2;
+console.log(averageAge);
+*/
+
+/////////////////
+// NEW SECTION //
+/////////////////
+/* STRING and TEMPLATE LITERALS
+-- can concatenates strings together 
+-- numbers will be type coerced to strings
+
+TEMPLATE LITERALS
+-- Allows us inserting the variables directly into the string
+-- To insert variables: let nameAndJob = `my name is ${name} and my job is ${job}`;
+-- `` back ticks for quotes also allows us to create multi-line stirngs 
+*/
+
+/*
+const firstName = "Jonas";
+const job = "software engineer";
+const birthYear = 1999;
+const year = 2022;
+
+const jonas =
+    "I'm  " +
+    firstName +
+    ", a " +
+    (year - birthYear) +
+    " year old " +
+    job +
+    "!";
+console.log(jonas);
+
+const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+console.log(jonasNew);
+
+console.log(`Just a regular string...`);
+
+console.log("String with \nmultiple \nlines");
+console.log(`String with
+multiple
+lines`);
+*/
+
+/////////////////
+// NEW SECTION //
+/////////////////
+/* CONDITIONAL STATEMENTS
+ */
+/*
+const age = 14;
+
+if (age >= 18) {
+    console.log("You can drive! 🚗");
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`You can't drive! You have ${yearsLeft} years left! ❌`);
+}
+
+const birthYear = 2001;
+
+let century;
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
+console.log(century);
+*/
