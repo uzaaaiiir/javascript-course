@@ -1,3 +1,6 @@
+// CODING CHALLENGE 1 & 2
+
+/*
 function calcBMI(weight, height) {
     return weight / height ** 2;
 }
@@ -46,4 +49,19 @@ if (markHigherBMI2) {
     console.log(
         `John's BMI (${johnBMI2}) is higher than Mark's (${markBMI2})!`
     );
+}
+*/
+
+// CODING CHALLENGE 3
+const dolphinAverage = (96 + 108 + 89) / 3;
+const koalaAverage = (88 + 91 + 110) / 3;
+
+if (dolphinAverage > koalaAverage && dolphinAverage >= 100) {
+    console.log("Dolphin's Win!");
+} else if (koalaAverage > dolphinAverage && koalaAverage >= 100) {
+    console.log("Koala's! Win!");
+} else if (koalaAverage == dolphinAverage && koalaAverage >= 100) {
+    console.log("It's a tie!");
+} else {
+    console.log("No team wins!");
 }
