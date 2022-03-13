@@ -246,3 +246,55 @@ if (birthYear <= 2000) {
 }
 console.log(century);
 */
+
+/////////////////
+// NEW SECTION //
+/////////////////
+/* TYPE CONVERSION AND COERCION
+
+-- type conversion - when we manually convert between datatypes
+-- type coercion - when javascript implicitly & automatically converts between types 
+ */
+
+/*
+let inputYear = "1991";
+inputYear = Number(inputYear);
+console.log(inputYear);
+console.log(Number(inputYear) + 18);
+
+inputYear = String(inputYear);
+console.log(inputYear);
+
+// type coercion
+let num = "1";
+console.log(num);
+num = num + 4;
+console.log(num);
+*/
+
+/////////////////
+// NEW SECTION //
+/////////////////
+/* TRUTHY AND FALSY VALUES
+
+-- falsy values - are values that are not false, but become false when you try to convert them to a boolean
+    -- 5 falsy values: 0, '', undefined, null, NaN
+    -- when you attempt to convert these to a boolean, they become false
+-- truthy values - everything else is converted to true when you attempt to convert to a boolean
+ */
+
+console.log(Boolean(0));
+console.log(Boolean(null));
+console.log(Boolean(undefined));
+console.log(Boolean("Hello"));
+console.log(Boolean(5));
+console.log(Boolean({}));
+
+const money = 0;
+console.log(money, Boolean(money));
+
+if (money) {
+    console.log("Don't spend it all");
+} else {
+    console.log("You should get a job!");
+}
