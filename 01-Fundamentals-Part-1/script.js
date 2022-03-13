@@ -283,6 +283,7 @@ console.log(num);
 -- truthy values - everything else is converted to true when you attempt to convert to a boolean
  */
 
+/*
 console.log(Boolean(0));
 console.log(Boolean(null));
 console.log(Boolean(undefined));
@@ -297,4 +298,78 @@ if (money) {
     console.log("Don't spend it all");
 } else {
     console.log("You should get a job!");
+}
+
+let height = 0;
+if (height) {
+    console.log("YAY! Height is defined");
+} else if (height == 0) {
+    console.log("You have no height!");
+} else {
+    console.log("Height is undefined!");
+}
+*/
+
+/////////////////
+// NEW SECTION //
+/////////////////
+/* EQUALITY OPERATORS: == and ===
+
+--
+ */
+
+/*
+const age = "18";
+if (age === 18) console.log("You are of legal age! (strict)");
+if (age == 18) console.log("You are of legal age! (loose)");
+
+const favNum = Number(prompt("What's your favorite number?"));
+console.log(favNum);
+console.log(typeof favNum);
+
+if (favNum === 23) {
+    console.log("Cool! 23 is an amazing number!");
+} else if (favNum === 7) {
+    console.log("7 is also a cool number!");
+} else {
+    console.log("Number is not 23 or 7. Not cool. :/");
+}
+
+if (favNum !== 23) {
+    console.log("Why not 23!");
+}
+*/
+
+/////////////////
+// NEW SECTION //
+/////////////////
+/* 
+
+-- falsy
+ */
+
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense && !hasGoodVision);
+console.log(hasDriversLicense || !hasGoodVision);
+console.log(!hasDriversLicense || !hasGoodVision);
+console.log(!hasDriversLicense);
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+
+if (shouldDrive) {
+    console.log("Sarah is able to drive!");
+} else {
+    console.log("Someone else shoul ddrive...");
+}
+
+const isTired = false; // C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log("Sarah is able to drive!");
+} else {
+    console.log("Someone else should drive...");
 }
