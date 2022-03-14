@@ -53,6 +53,7 @@ if (markHigherBMI2) {
 */
 
 // CODING CHALLENGE 3
+/*
 const dolphinAverage = (96 + 108 + 89) / 3;
 const koalaAverage = (88 + 91 + 110) / 3;
 
@@ -65,3 +66,14 @@ if (dolphinAverage > koalaAverage && dolphinAverage >= 100) {
 } else {
     console.log("No team wins!");
 }
+*/
+
+// CODING CHALLENGE 4
+
+const bill = 430;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+console.log(
+    `The bill was ${bill}, the tip was ${tip}, and the total value is ${
+        bill + tip
+    }`
+);
