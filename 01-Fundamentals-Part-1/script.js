@@ -383,7 +383,7 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 
 -- falsy
  */
-
+/*
 const day = "saturday";
 
 switch (day) {
@@ -423,3 +423,41 @@ if (day === "monday") {
 } else {
     console.log("Not a valid day!");
 }
+*/
+
+/////////////////
+// NEW SECTION //
+/////////////////
+/* STATEMENTS VS EXPRESSIONS
+-- expressions are evaluated and produce a value
+-- statements do not produce a value -- ex. if statements, switch statements 
+ */
+
+/////////////////
+// NEW SECTION //
+/////////////////
+/* TERNARY OPERATOR -- CONDITIONAL
+-- allows writing an if and else statement in 1 line
+-- the ternary operator is an expression and can be stored in variables and used in template literal
+    -- recall: template literals allow embedded values and variables within strings
+*/
+
+/*
+const age = 23;
+age >= 18
+    ? console.log("I like to drink wine 🍷")
+    : console.log("I like to drink water 💦");
+
+const drink = age >= 18 ? "wine 🍷" : "water 💦";
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+    drink2 = "wine";
+} else {
+    drink2 = "water";
+}
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? "wine" : "water"}!`);
+*/
