@@ -174,7 +174,7 @@ console.log(yearsUntilRetirement(1940, "John"));
 //////////////////////
 // ARRAYS SECTION   //
 //////////////////////
-
+/*
 const friends = ["Michael", "Steven", "Peter"];
 console.log(friends);
 
@@ -207,3 +207,43 @@ for (let i = 0; i < yearBorn.length; i++) {
     age[i] = calcAge(yearBorn[i]);
     console.log(yearBorn[i], age[i]);
 }
+*/
+
+//////////////////////////////
+// ARRAYS METHODS SECTION   //
+//////////////////////////////
+// Arrays are objects in JS -- methods are functions that can be called on objects
+
+const friends = ["Michael", "Steven", "Peter"];
+// push methods adds an elements to an array and returns the length of the array
+const newLength = friends.push("Uzair");
+console.log(newLength); //logs 4
+
+//unshift adds element to the beginning of array
+// Also returns length of array
+friends.unshift("John");
+console.log(friends);
+
+// Remove elements of array
+// pop removes last element of array; returns the popped element
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+// Remove first element
+// use shift method
+friends.shift();
+console.log(friends);
+
+// Get -1 if the element does not exist
+console.log(friends.indexOf("Steven"));
+console.log(friends.indexOf("Bob"));
+
+// includes -- returns true if element is in array, otherwise false
+// uses strict equality for the comparison
+console.log(friends.includes("Steven"));
+console.log(friends.includes("Bob"));
+
+//////////////////////////////
+// ARRAYS METHODS SECTION   //
+//////////////////////////////
