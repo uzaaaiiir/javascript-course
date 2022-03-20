@@ -214,6 +214,7 @@ for (let i = 0; i < yearBorn.length; i++) {
 //////////////////////////////
 // Arrays are objects in JS -- methods are functions that can be called on objects
 
+/*
 const friends = ["Michael", "Steven", "Peter"];
 // push methods adds an elements to an array and returns the length of the array
 const newLength = friends.push("Uzair");
@@ -243,7 +244,41 @@ console.log(friends.indexOf("Bob"));
 // uses strict equality for the comparison
 console.log(friends.includes("Steven"));
 console.log(friends.includes("Bob"));
+*/
 
 //////////////////////////////
 // ARRAYS METHODS SECTION   //
 //////////////////////////////
+
+const newName = {
+    firstName: "Uzair",
+    lastName: "Mohiuddin",
+    age: 2022 - 1999,
+    job: "student",
+    friends: ["Michael", "Peter", "Steven"],
+};
+console.log(newName.firstName);
+console.log(newName["firstName"]);
+
+const nameKey = "Name";
+console.log(newName["first" + nameKey], newName["last" + nameKey]);
+
+const interestedIn = prompt(
+    "What do you want to know about Uzair? Choose between firstName, lastName, age, job, and friends"
+);
+
+console.log(newName[interestedIn]);
+
+if (newName[interestedIn]) {
+    console.log(newName[interestedIn]);
+} else {
+    console.log("Invalid input.");
+}
+
+newName.location = "Ontario";
+newName["twitter"] = "@UzairM__";
+console.log(newName);
+
+console.log(
+    `${newName.firstName} has ${newName.friends.length} friends and his best friend is ${newName.friends[0]}`
+);
