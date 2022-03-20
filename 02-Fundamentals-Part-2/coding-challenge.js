@@ -17,12 +17,11 @@ function checkWinner(avgDolphins, avgKoalas) {
             `Koalas win!\nDolphins Score: ${avgDolphins}\nKoalas Score: ${avgKoalas}`
         );
     } else {
-        console.log(`It's a tie!
-        Both teams score ${avgDolphins} points!`);
+        console.log(`No team wins...`);
     }
 }
 
-const scoreDolphins = calcAverage(85, 54, 41);
-const scoreKoalas = calcAverage(23, 34, 27);
+const scoreDolphins = calcAverage(44, 23, 71);
+const scoreKoalas = calcAverage(65, 54, 49);
 
 checkWinner(scoreDolphins, scoreKoalas);
