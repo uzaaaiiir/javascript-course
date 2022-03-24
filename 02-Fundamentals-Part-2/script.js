@@ -249,7 +249,7 @@ console.log(friends.includes("Bob"));
 //////////////////////////////
 // ARRAYS METHODS SECTION   //
 //////////////////////////////
-
+/*
 const newName = {
     firstName: "Uzair",
     lastName: "Mohiuddin",
@@ -282,3 +282,16 @@ console.log(newName);
 console.log(
     `${newName.firstName} has ${newName.friends.length} friends and his best friend is ${newName.friends[0]}`
 );
+*/
+
+const newName = {
+    firstName: "Uzair",
+    lastName: "Mohiuddin",
+    birthYear: 1999,
+    job: "student",
+    friends: ["Michael", "Peter", "Steven"],
+    hasDriversLicense: true,
+    calcAge: function () {
+        return 2022 - this.birthYear;
+    },
+};
