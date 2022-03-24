@@ -298,13 +298,13 @@ const newName = {
     },
 
     getSummary: function () {
-        return `${newName.firstName} is a ${newName.calcAge()} year old ${
-            newName.job
+        return `${this.firstName} is a ${this.calcAge()} year old ${
+            this.job
         }. He ${
-            newName.hasDriversLicense ? "has" : "does not have"
+            this.hasDriversLicense ? "has" : "does not have"
         } a driver's license. He has ${
-            newName.friends.length
-        } friends and his best friend is ${newName.friends[0]}.`;
+            this.friends.length
+        } friends and his best friend is ${this.friends[0]}.`;
     },
 };
 
