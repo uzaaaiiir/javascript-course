@@ -297,3 +297,4 @@ const newName = {
 };
 
 console.log(newName.calcAge());
+console.log(newName["calcAge"]());
