@@ -290,11 +290,26 @@ const newName = {
     birthYear: 1999,
     job: "student",
     friends: ["Michael", "Peter", "Steven"],
-    hasDriversLicense: true,
+    hasDriversLicense: false,
+
     calcAge: function () {
-        return 2022 - this.birthYear;
+        this.age = 2022 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function () {
+        return `${newName.firstName} is a ${newName.calcAge()} year old ${
+            newName.job
+        }. He ${
+            newName.hasDriversLicense ? "has" : "does not have"
+        } a driver's license. He has ${
+            newName.friends.length
+        } friends and his best friend is ${newName.friends[0]}.`;
     },
 };
 
 console.log(newName.calcAge());
 console.log(newName["calcAge"]());
+console.log(newName.age);
+
+console.log(newName.getSummary());
