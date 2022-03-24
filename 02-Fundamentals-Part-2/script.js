@@ -295,3 +295,5 @@ const newName = {
         return 2022 - this.birthYear;
     },
 };
+
+console.log(newName.calcAge());
