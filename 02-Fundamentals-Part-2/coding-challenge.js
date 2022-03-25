@@ -30,6 +30,7 @@ checkWinner(scoreDolphins, scoreKoalas);
 
 // CODING CHALLENGE #2
 
+/*
 const calcTip = function (billValue) {
     return billValue >= 50 && billValue <= 300
         ? billValue * 0.15
@@ -46,3 +47,39 @@ for (let i = 0; i < bills.length; i++) {
 }
 
 console.log(tips, total);
+*/
+const mark = {
+    firstName: "Mark",
+    lastName: "Miller",
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    },
+};
+
+const john = {
+    firstName: "John",
+    lastName: "Smith",
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    },
+};
+
+if (mark.calcBMI() > john.calcBMI()) {
+    console.log(
+        `${mark.firstName}'s BMI (${mark.bmi}) is higher than ${john.firstName}'s (${john.bmi})`
+    );
+} else if (mark.calcBMI() < john.calcBMI()) {
+    console.log(
+        `${john.firstName}'s BMI(${john.bmi}) is higher than ${mark.firstName}'s (${mark.bmi})`
+    );
+} else {
+    console.log(
+        `${mark.firstName} and ${john.firstName} have the same BMI (${mark.bmi})`
+    );
+}
