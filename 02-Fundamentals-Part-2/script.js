@@ -322,7 +322,7 @@ console.log(newName.getSummary());
 //////////////////////////////
 // LOOPS SECTION   //
 //////////////////////////////
-
+/*
 const jonasArray = [
     "Jonas",
     "Schmedtmann",
@@ -370,4 +370,21 @@ for (let i = 0; i < jonasArray.length; i++) {
     }
 
     console.log(jonasArray[i], typeof jonasArray[i]);
+}
+*/
+
+///////////////////////////////////////////////
+// LOOP BACKWARDS AND NESTED LOOPS SECTION   //
+///////////////////////////////////////////////
+
+const jonasArray = [
+    "Jonas",
+    "Schmedtmann",
+    2037 - 1991,
+    "teacher",
+    ["Michael", "Peter", "Steven"],
+];
+
+for (let i = jonasArray.length - 1; i > -1; i--) {
+    console.log(i, jonasArray[i]);
 }
