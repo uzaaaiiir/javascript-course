@@ -48,6 +48,9 @@ for (let i = 0; i < bills.length; i++) {
 
 console.log(tips, total);
 */
+
+// CODING CHALLENGE #3
+/*
 const mark = {
     firstName: "Mark",
     lastName: "Miller",
@@ -93,3 +96,34 @@ if (mark.calcBMI() > john.calcBMI()) {
         } have the same BMI (${mark.bmi})`
     );
 }
+*/
+
+// CODING CHALLENGE #4
+
+const calcTip = function (billValue) {
+    return billValue >= 50 && billValue <= 300
+        ? billValue * 0.15
+        : billValue * 0.2;
+};
+
+function calcAverage(arr) {
+    let sum = 0;
+    const count = arr.length;
+    for (let i = 0; i < arr.length; i++) {
+        sum = sum + arr[i];
+    }
+
+    return sum / count;
+}
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+    tips.push(calcTip(bills[i]));
+    totals.push(tips[i] + bills[i]);
+}
+
+console.log(tips, totals);
+console.log(calcAverage(totals));
