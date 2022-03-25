@@ -3,8 +3,12 @@
 
 const x = 0;
 
-if (x <= 0) {
-  console.log(x);
+if (x === 0) {
+  console.log("It's zero");
 } else {
-  console.log(x + 1);
+  console.log("Its not zero");
 }
+
+const calcAge = (birthYear) => 2037 - birthYear;
+
+console.log(calcAge(1999));
