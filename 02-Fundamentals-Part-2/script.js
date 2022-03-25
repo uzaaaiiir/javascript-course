@@ -331,6 +331,43 @@ const jonasArray = [
     ["Michael", "Peter", "Steven"],
 ];
 
+const types = [];
+const typesPush = [];
+
 for (let i = 0; i < jonasArray.length; i++) {
     console.log(jonasArray[i]);
+    types[i] = typeof jonasArray[i];
+    typesPush.push(typeof jonasArray[i]);
+}
+
+console.log(types);
+console.log(typesPush);
+
+const years = [1991, 2007, 1969, 2020, 1999, 2005, 1997];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2022 - years[i]);
+    console.log(ages[i]);
+}
+
+// continue -- exits ccurrent iteration of loops and moves to the next one
+// break -- exits the loops
+
+console.log("--- ONLY STRINGS ---");
+for (let i = 0; i < jonasArray.length; i++) {
+    if (typeof jonasArray[i] !== "string") {
+        continue;
+    }
+
+    console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+console.log("\n--- BREAK WITH NUMBER ---");
+for (let i = 0; i < jonasArray.length; i++) {
+    if (typeof jonasArray[i] === "number") {
+        break;
+    }
+
+    console.log(jonasArray[i], typeof jonasArray[i]);
 }
