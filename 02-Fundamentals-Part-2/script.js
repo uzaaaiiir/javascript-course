@@ -377,6 +377,7 @@ for (let i = 0; i < jonasArray.length; i++) {
 // LOOP BACKWARDS AND NESTED LOOPS SECTION   //
 ///////////////////////////////////////////////
 
+/* 
 const jonasArray = [
     "Jonas",
     "Schmedtmann",
@@ -388,3 +389,39 @@ const jonasArray = [
 for (let i = jonasArray.length - 1; i > -1; i--) {
     console.log(i, jonasArray[i]);
 }
+
+for (let exercise = 0; exercise < 3; exercise++) {
+    console.log(`----- Starting exercise ${exercise + 1}`);
+
+    for (let rep = 0; rep < 5; rep++) {
+        console.log(
+            `Exercise ${exercise + 1}: Lifting weight repetition ${rep + 1} 🏋️‍♀️`
+        );
+    }
+}
+*/
+
+/////////////////////
+// WHILE SECTION   //
+/////////////////////
+
+// for (let rep = 0; rep < 5; rep++) {
+//     console.log(`Lifting weight repetition ${rep + 1} 🏋️‍♀️`);
+// }
+/*
+let i = 0;
+while (i < 10) {
+    console.log(`WHILE: Lifting weight repitition ${i + 1}`);
+    i++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+
+    if (dice === 6) console.log("Loop is about to end ...");
+}
+*/
