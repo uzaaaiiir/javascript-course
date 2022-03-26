@@ -12,3 +12,7 @@ if (x === 0) {
 const calcAge = (birthYear) => 2037 - birthYear;
 
 console.log(calcAge(1999));
+
+console.log(13);
+
+console.log(calcAge(2005));
