@@ -51,3 +51,16 @@ function descendingOrder(n) {
 }
 
 console.log(descendingOrder(15));
+
+// ATM Machines Allow 4 or 6 digit PIN codes nad PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits
+// If the function is passed a valid pin string, return true, otherwise false
+function validatePIN(pin) {
+  pinNumber = String(Math.ceil(Number(pin)));
+  if (pinNumber.length == 4 || pinNumber.length == 6) {
+    if (Number.isInteger(Number(pinNumber)) && pinNumber >= 0) {
+      return true;
+    }
+  }
+
+  return false;
+}
