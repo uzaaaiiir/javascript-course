@@ -64,3 +64,23 @@ function validatePIN(pin) {
 
   return false;
 }
+
+function findShort(s) {
+  const arrOfWords = s.split(" ");
+  console.log(arrOfWords);
+  let shortestLength = 0;
+  console.log(arrOfWords.length);
+
+  shortestLength = arrOfWords.length > 0 ? arrOfWords[0].length : 0;
+
+  for (let i = 1; i < arrOfWords.length; i++) {
+    console.log(i);
+    if (arrOfWords[i].length < shortestLength) {
+      shortestLength = arrOfWords[i].length;
+      console.log(shortestLength);
+    }
+  }
+  return shortestLength;
+}
+
+console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
