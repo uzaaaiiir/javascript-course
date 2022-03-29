@@ -106,6 +106,7 @@ function findShort(s) {
  */
 
 const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+const temperatures2 = [-5, 20, 15];
 
 const calcTempAmplitude = function (temps) {
   let max = temps[0];
@@ -121,9 +122,53 @@ const calcTempAmplitude = function (temps) {
     }
   }
 
+  console.log(max, min);
+
   const tempAmplitude = max - min;
 
   return tempAmplitude;
 };
 
 console.log(calcTempAmplitude(temperatures));
+
+// Problem 2:
+// Function should now receive two arrays of temperatures
+
+const calcTempAmplitude2 = function (temps1, temps2) {
+  const temps = temps1.concat(temps2);
+  let max = temps[0];
+  let min = temps[0];
+
+  for (let i = 0; i < temps.length; i++) {
+    if (Number.isInteger(temps[i])) {
+      if (temps[i] > max) {
+        max = temps[i];
+      } else if (temps[i] < min) {
+        min = temps[i];
+      }
+    }
+  }
+
+  console.log(max, min);
+
+  const tempAmplitude = max - min;
+
+  return tempAmplitude;
+};
+
+console.log(calcTempAmplitude2(temperatures, temperatures2));
+
+/**
+ * Write a function to reverse an array
+ */
+
+const reverse = function (arr) {
+  let reverseArr = [];
+  for (let i = arr.length - 1; i > -1; i--) {
+    reverseArr.push(arr[i]);
+  }
+
+  return reverseArr;
+};
+
+console.log(reverse([1, 3, 5, 7]));
