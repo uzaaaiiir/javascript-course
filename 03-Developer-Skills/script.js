@@ -172,3 +172,20 @@ const reverse = function (arr) {
 };
 
 console.log(reverse([1, 3, 5, 7]));
+
+const measureKelvin = function () {
+  const measurement = {
+    type: "temp",
+    unit: "celsius",
+    value: prompt("Degree celsius: "),
+  };
+
+  console.log(measurement);
+  // console.warn(measurement.value);
+  // console.error(measurement.value);
+  const kelvin = Number(measurement.value) + 273;
+
+  return kelvin;
+};
+
+console.log(measureKelvin());
