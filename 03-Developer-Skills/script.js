@@ -83,4 +83,47 @@ function findShort(s) {
   return shortestLength;
 }
 
-console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+// console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+
+/**
+ * Given an array of temperatures of one day, calculate the temperature amplitude.
+ * Keep in mind that sometimes tehre might be a sensor error.
+ */
+
+/**
+ * Understand the Problem
+ * -- what is temp amplitude? Answer: different between the highest and lowest temp
+ * -- how to compute max and min tempertures?
+ * -- what's a sensor error? What to do?
+ */
+
+/**
+ * 2) Break up into sub-problems
+ * -- how to ignore errors?
+ * -- Find max value in temp array
+ * -- Find min value in temp array
+ * -- subtract min from max (amplitude) and return it
+ */
+
+const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+
+const calcTempAmplitude = function (temps) {
+  let max = temps[0];
+  let min = temps[0];
+
+  for (let i = 0; i < temps.length; i++) {
+    if (Number.isInteger(temps[i])) {
+      if (temps[i] > max) {
+        max = temps[i];
+      } else if (temps[i] < min) {
+        min = temps[i];
+      }
+    }
+  }
+
+  const tempAmplitude = max - min;
+
+  return tempAmplitude;
+};
+
+console.log(calcTempAmplitude(temperatures));
