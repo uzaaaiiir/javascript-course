@@ -15,6 +15,7 @@ console.log(document.querySelector('.guess').value);
 */
 
 const random = Math.trunc(Math.random() * 20) + 1;
+document.querySelector('.number').textContent = random;
 
 const x = function () {
   console.log(document.querySelector('.guess').value);
