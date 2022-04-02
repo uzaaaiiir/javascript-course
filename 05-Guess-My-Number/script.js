@@ -47,7 +47,9 @@ document.querySelector('.check').addEventListener('click', function () {
 
     document.querySelector('.number').textContent = secretNumber;
 
-    highscore++;
+    if (score > highscore) {
+      highscore = score;
+    }
     document.querySelector('.highscore').textContent = highscore;
   }
 
