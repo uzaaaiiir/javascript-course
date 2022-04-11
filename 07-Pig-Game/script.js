@@ -9,9 +9,3 @@ const diceEl = document.querySelector('.dice');
 score0El.textContent = 0;
 score1El.textContent = 0;
 diceEl.classList.add('.hidden');
-
-let p1score = 0;
-let p2score = 0;
-let number = 0;
-
-rollDice.addEventListener('click', diceRoll);
