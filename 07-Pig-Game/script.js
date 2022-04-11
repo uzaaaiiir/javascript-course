@@ -8,4 +8,5 @@ const diceEl = document.querySelector('.dice');
 
 score0El.textContent = 0;
 score1El.textContent = 0;
-diceEl.classList.add('.hidden');
+// Don't need to use .hidden -- just hidden
+diceEl.classList.add('hidden');
