@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 function calcAge(birthYear) {
   const age = 2022 - birthYear;
   //console.log(firstName); // Global variable available in function scope
@@ -95,3 +95,53 @@ const z = 3;
 console.log(x === window.x); // true
 console.log(y === window.y); // false
 console.log(z === window.z); // false
+
+console.log(this);
+const calcAge2 = function (birthYear) {
+  console.log(2022 - birthYear);
+  console.log(this);
+};
+calcAge2(1999);
+
+const calcAge2Arr = birthYear => {
+  console.log(2022 - birthYear);
+  console.log(this);
+};
+
+calcAge2Arr(1999);
+
+const uzair = {
+  year: 1999,
+  calcAge: function () {
+    console.log(this);
+    console.log(2022 - this.year);
+  },
+};
+
+uzair.calcAge();
+
+const matilda = {
+  year: 2017,
+};
+matilda.calcAge = uzair.calcAge;
+console.log(matilda);
+matilda.calcAge();
+
+const f = uzair.calcAge;
+console.log(f());
+*/
+
+var firstName = 'matilda';
+
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2022 - year);
+  },
+  greet: () => console.log(`Hey, ${this.firstName}`),
+};
+
+console.log(this.firstName);
+jonas.greet();
