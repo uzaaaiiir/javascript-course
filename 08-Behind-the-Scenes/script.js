@@ -169,3 +169,62 @@ const jonas = {
 console.log(this.firstName);
 jonas.greet();
 jonas.calcAge();
+
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+console.log(addExpr(2, 3));
+
+////////////////////////
+//PRIMITIVE VS OBJECTS//
+////////////////////////
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Jonas',
+  age: 30,
+};
+
+const friend = me;
+friend.age = 31;
+console.log(me);
+console.log(friend);
+
+let lastName = 'williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+
+// Creates a reference to the same obect
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+
+console.log(`Before marriage: `, jessica);
+console.log(`After marriage: `, marriedJessica);
+
+// Copying Objects
+
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Jonathan';
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+console.log(jessicaCopy);
