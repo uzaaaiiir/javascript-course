@@ -138,10 +138,34 @@ const jonas = {
   year: 1991,
   calcAge: function () {
     console.log(this);
-    console.log(2022 - year);
+    console.log(2022 - this.year);
+
+    // isMillenial is treated as a function -- not a method
+    // The this keyword is undefined for functions
+
+    // Solution 1: introduce a self variable
+    // const self = this;
+    // const isMillenial = function () {
+    //   console.log(self);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    //   // console.log(this.year >= 1981 && this.year <= 1996);
+    // };
+
+    // Solution 2: Use arrow function
+    // Arrow function gets this ketword from parent
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+      // console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
   },
-  greet: () => console.log(`Hey, ${this.firstName}`),
+  greet: () => {
+    console.log(`Hey, ${this.firstName}`);
+    console.log(this);
+  },
 };
 
 console.log(this.firstName);
 jonas.greet();
+jonas.calcAge();
