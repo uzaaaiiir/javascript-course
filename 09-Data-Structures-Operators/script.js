@@ -32,6 +32,10 @@ const restaurant = {
   },
 };
 
+// Destructuring Objects
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
 // Destructuring allows breaking down object properties of array values into distinct variables
 const arr = [2, 3, 4];
 const a = arr[0];
@@ -67,3 +71,7 @@ const [i, , j] = nested;
 console.log(i, j);
 const [k, , [n, o]] = nested;
 console.log(k, n, o);
+
+// Default Values
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
