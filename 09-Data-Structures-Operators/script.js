@@ -30,7 +30,29 @@ const restaurant = {
       close: 24,
     },
   },
+  // Destructuring objects as a parameter
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address}, at ${time}`
+    );
+  },
 };
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sle, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Via del Sle, 21',
+});
 
 // Destructuring Objects
 const { name, openingHours, categories } = restaurant;
@@ -46,6 +68,20 @@ console.log(restarantName, hours, tags);
 // Menu is not in the object -- used default value
 const { menu = [], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters);
+
+// Mutating variables
+let f = 111;
+let g = 999;
+const obj = { g: 23, g: 7, h: 14 };
+({ f, g } = obj);
+console.log(f, g);
+
+// Nested Objects
+const {
+  fri: { open: ab, close: cd },
+} = openingHours;
+console.log(open, close);
+console.log(ab, cd);
 
 // Destructuring allows breaking down object properties of array values into distinct variables
 const arr = [2, 3, 4];
