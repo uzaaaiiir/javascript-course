@@ -36,6 +36,17 @@ const restaurant = {
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 
+const {
+  name: restarantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restarantName, hours, tags);
+
+// Menu is not in the object -- used default value
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
 // Destructuring allows breaking down object properties of array values into distinct variables
 const arr = [2, 3, 4];
 const a = arr[0];
