@@ -12,6 +12,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -27,3 +31,32 @@ const restaurant = {
     },
   },
 };
+
+// Destructuring allows breaking down object properties of array values into distinct variables
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+// Destructured Array
+const [x, y, z] = arr;
+const [d, ...rest] = arr;
+console.log(d, rest);
+console.log(x, y, z);
+
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+
+// const temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary);
+// console.log(restaurant.categories);
+
+// Destructures the array and switches the names
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
+
+// Destructures array into variables
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
