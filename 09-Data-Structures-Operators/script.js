@@ -60,3 +60,10 @@ console.log(main, secondary);
 // Destructures array into variables
 const [starter, mainCourse] = restaurant.order(2, 0);
 console.log(starter, mainCourse);
+
+// Nested Destructuring
+const nested = [2, 4, [5, 6]];
+const [i, , j] = nested;
+console.log(i, j);
+const [k, , [n, o]] = nested;
+console.log(k, n, o);
