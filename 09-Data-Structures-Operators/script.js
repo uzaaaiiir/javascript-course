@@ -41,6 +41,12 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address}, at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with: ${ing1}, ${ing2}, and ${ing3}`
+    );
+  },
 };
 
 restaurant.orderDelivery({
@@ -54,6 +60,7 @@ restaurant.orderDelivery({
   address: 'Via del Sle, 21',
 });
 
+//////////////////////////
 // Destructuring Objects
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
@@ -83,6 +90,8 @@ const {
 console.log(open, close);
 console.log(ab, cd);
 
+////////////////////////
+//Destructuring Array
 // Destructuring allows breaking down object properties of array values into distinct variables
 const arr = [2, 3, 4];
 const a = arr[0];
@@ -122,3 +131,37 @@ console.log(k, n, o);
 // Default Values
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+
+/////////////////////
+// SPREAD OPERATOR
+const arr1 = [7, 8, 9];
+const badNewArr = [1, 2, arr1[0], arr1[1], arr1[2]];
+const goodnewArr = [1, 2, ...arr1];
+console.log(badNewArr, '\n', goodnewArr);
+console.log(...goodnewArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(...newMenu);
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join 2 Arrays
+const menu1 = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(...menu1);
+
+// Iterables: arrays, strings, sets, NOT objects
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(...letters);
+
+// Real World Examples
+const ingredients = [
+  prompt("Let's make pasta! Ingredient 1?"),
+  prompt('Ingredient 2?'),
+  prompt('Ingredient 3'),
+];
+console.log(...ingredients);
+restaurant.orderPasta(...ingredients);
+
+// Spread on Objects
