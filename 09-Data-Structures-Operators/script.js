@@ -49,6 +49,7 @@ const restaurant = {
   },
 };
 
+/*
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sle, 21',
@@ -59,9 +60,11 @@ restaurant.orderDelivery({
 restaurant.orderDelivery({
   address: 'Via del Sle, 21',
 });
+*/
 
 //////////////////////////
 // Destructuring Objects
+/*
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 
@@ -79,7 +82,7 @@ console.log(menu, starters);
 // Mutating variables
 let f = 111;
 let g = 999;
-const obj = { g: 23, g: 7, h: 14 };
+const obj = { f: 23, g: 7, h: 14 };
 ({ f, g } = obj);
 console.log(f, g);
 
@@ -89,10 +92,12 @@ const {
 } = openingHours;
 console.log(open, close);
 console.log(ab, cd);
+*/
 
 ////////////////////////
 //Destructuring Array
 // Destructuring allows breaking down object properties of array values into distinct variables
+/*
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -131,9 +136,11 @@ console.log(k, n, o);
 // Default Values
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+*/
 
-/////////////////////
+/////////////////////////////////
 // SPREAD OPERATOR
+/*
 const arr1 = [7, 8, 9];
 const badNewArr = [1, 2, arr1[0], arr1[1], arr1[2]];
 const goodnewArr = [1, 2, ...arr1];
@@ -173,3 +180,17 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
+*/
+
+////////////////////////
+// REST PATTERN -- does the opposite of the spread operator
+const arr = [1, 2, ...[3, 4]]; // Expands the array b/c on the right side
+const [a, b, ...rest] = [1, 2, 3, 4, 5];
+console.log(arr);
+console.log(a, b, rest);
+
+const [pizza, , resotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, resotto, otherFood);
