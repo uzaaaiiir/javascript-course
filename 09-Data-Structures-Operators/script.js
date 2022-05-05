@@ -47,6 +47,10 @@ const restaurant = {
       `Here is your delicious pasta with: ${ing1}, ${ing2}, and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient, otherIngredients);
+  },
 };
 
 /*
@@ -218,3 +222,6 @@ console.log(...x);
 add(...x);
 add(5, 3, 7, 2);
 add(8, 2, 5, 3, 2, 1, 4);
+
+restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
+restaurant.orderPizza('mushroom');
