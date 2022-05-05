@@ -184,6 +184,8 @@ console.log(restaurant.name);
 
 ////////////////////////
 // REST PATTERN -- does the opposite of the spread operator
+
+// Destructuring
 const arr = [1, 2, ...[3, 4]]; // Expands the array b/c on the right side
 const [a, b, ...rest] = [1, 2, 3, 4, 5];
 console.log(arr);
@@ -194,3 +196,25 @@ const [pizza, , resotto, ...otherFood] = [
   ...restaurant.starterMenu,
 ];
 console.log(pizza, resotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+console.log(sat);
+
+// Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  // console.log(d3.sum(numbers));
+  console.log(sum);
+  return sum;
+};
+
+const x = [23, 5, 7];
+console.log(...x);
+add(...x);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
