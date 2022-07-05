@@ -12,6 +12,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -32,8 +36,29 @@ const restaurant = {
  * -- Allows unpacking values from arrays & properties from objects into distinct variables
  */
 
-/** DESTRUCTURING ARRAYS */
+/** DESTRUCTURING ARRAYS
+ * -- Unpacks values of array into individual variables
+ * -- Does not alter the original array
+ */
 const arr = [1, 2, 3];
 const [a, b, c] = arr;
 console.log(a, b, c);
-console.log('Hello World!');
+
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
+
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
+// Nested Destructuring
+const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested; // Get i = 2 and j = [5,6]
+const [i, , [j, k]] = nested; // Get i = 2, j = 5, k = 6
+console.log(i, j, k);
+
+// Default Values in an array
+const [p = 0, q = 1, r = 2] = [8, 9];
+console.log(p, q, r);
