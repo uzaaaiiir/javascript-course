@@ -27,3 +27,13 @@ const restaurant = {
     },
   },
 };
+
+/** DESTRUCTURING
+ * -- Allows unpacking values from arrays & properties from objects into distinct variables
+ */
+
+/** DESTRUCTURING ARRAYS */
+const arr = [1, 2, 3];
+const [a, b, c] = arr;
+console.log(a, b, c);
+console.log('Hello World!');
