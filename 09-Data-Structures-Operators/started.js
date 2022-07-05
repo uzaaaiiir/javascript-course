@@ -27,6 +27,12 @@ const restaurant = {
     );
   },
 
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}.`
+    );
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -46,12 +52,43 @@ const restaurant = {
 /** SPREAD OPERATOR
  * -- Allows us to copy all or part of an interable into another array, object as individual elements
  * -- Unpacks an array
- */
+ 
 
 const arr = [7, 8, 9];
 const newArr = [1, 2, ...arr];
-console.log(...arr);
+console.log(...arr); // Takes all the elements out, and spreads them
 console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy Array
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+const wholeMenuCopy = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(wholeMenuCopy);
+
+// Iterables: arrays strings, maps, sets, NOT objects
+const str = 'Uzair';
+const letters = [...str, 'S'];
+
+// const ingredients = [prompt("Let's make Pasta! Ingredient 1? "),prompt('Ingredient 2?'),prompt('Ingredient 3?')];
+// console.log(ingredients);
+
+// Unpacks the array when passing into the method
+restaurant.orderPasta(...ingredients);
+
+const newRestaurant = { founder: 'Uzair', foundedIn: 2012, ...restaurant };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+*/
+
+/************************** */
 
 /** DESTRUCTURING
  * -- Allows unpacking values from arrays & properties from objects into distinct variables
