@@ -16,6 +16,17 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 1,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
+    );
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -32,14 +43,72 @@ const restaurant = {
   },
 };
 
+/** SPREAD OPERATOR
+ * -- Allows us to copy all or part of an interable into another array, object as individual elements
+ * -- Unpacks an array
+ */
+
+const arr = [7, 8, 9];
+const newArr = [1, 2, ...arr];
+console.log(...arr);
+console.log(...newArr);
+
 /** DESTRUCTURING
  * -- Allows unpacking values from arrays & properties from objects into distinct variables
  */
 
+/** DESTRUCTURING OBJECTS
+ * -- Unpacking properties of objects into distinct variables
+ * -- Use curly braces b/c this is how we create objects
+ * -- Example: const {name, hours, categories} = restaurant;
+ 
+
+const { name, categories, openingHours } = restaurant;
+console.log(name, categories, openingHours);
+
+// Destructuring the object within the method
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via Del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+// Assigning names
+const {
+  name: restaurantName,
+  categories: tags,
+  openingHours: hours,
+} = restaurant;
+console.log(restaurantName, tags, hours);
+
+// Default Values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating Variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
+
+// Nested objects
+const {
+  fri: { open: o, close: c },
+} = restaurant.openingHours;
+console.log(o, c);
+
+*/
+
+/*********************** */
+
 /** DESTRUCTURING ARRAYS
  * -- Unpacks values of array into individual variables
  * -- Does not alter the original array
- */
+ * -- Use Square brackets b/c this is how we define arrays
+ * -- Example: const [i, j] = [1, 2];
+ 
 const arr = [1, 2, 3];
 const [a, b, c] = arr;
 console.log(a, b, c);
@@ -62,3 +131,4 @@ console.log(i, j, k);
 // Default Values in an array
 const [p = 0, q = 1, r = 2] = [8, 9];
 console.log(p, q, r);
+*/
