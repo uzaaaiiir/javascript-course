@@ -49,6 +49,31 @@ const restaurant = {
   },
 };
 
+/** REST PARAMETERS
+ * -- Does the opposite of the Spread Opertor
+ * -- Rest parameters collects elements and condenses them into an array
+ */
+
+// Destructuring
+// Spread operator is on the RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+console.log(arr);
+
+// Rest operator is on the LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// Methods
 /** SPREAD OPERATOR
  * -- Allows us to copy all or part of an interable into another array, object as individual elements
  * -- Unpacks an array
