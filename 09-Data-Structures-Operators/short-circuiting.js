@@ -74,3 +74,20 @@ const guests2 = restaurant.numGuests || 10;
 console.log(guests2);
 
 // ------------ AND OPERATOR SHORT CIRCUIT --------------
+/**
+ * -- Short circuits and returns the first falsy value
+ * -- When the first value is false, should return right away, and won't check other operands
+ * -- When both are true, returns the last truth value
+ */
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+console.log('Hello' && 23 && null && 'Jonas');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+// if restaurant.orderPizza exists and is truthy, only then it'll call the function
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+/** NULLISH COALESCING OPERATOR */
