@@ -90,4 +90,14 @@ if (restaurant.orderPizza) {
 // if restaurant.orderPizza exists and is truthy, only then it'll call the function
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-/** NULLISH COALESCING OPERATOR */
+/** NULLISH COALESCING OPERATOR
+ * -- Works with the idea of nullish valuesi nstead of falsy values
+ * -- Nullish: null and undefined (Does NOT include 0 or '') -- consider 0 and '' as truthy values and only null and undefined as falsy values
+ */
+restaurant.numGuests = 0;
+// although guests exists, will assign 10 b/c it will be the first truthy value
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
