@@ -45,6 +45,8 @@ const game = {
   },
 };
 
+// Coding Challenge 1
+/**  
 const [players1, players2] = game.players;
 const [gk, ...fieldPlayers] = players1;
 const allPlayers = [...players1, ...players2];
@@ -60,3 +62,21 @@ console.log(team1, draw, team2);
 team1 < team2 && console.log('Team 2 Wins!');
 console.log(game.printGoals('Davies', 'Muller', 'Lewadowski', 'Kiwich'));
 console.log(game.printGoals(...game.scored));
+*/
+
+// Coding Challenge 2
+
+for (const [goal, name] of game.scored.entries()) {
+  console.log(`Goal ${Number(goal) + 1}: ${name}`);
+}
+
+let count = 0;
+for (const value of Object.values(game.odds)) {
+  count += value;
+}
+console.log(`The average odd is ${count / 3}`);
+
+for (const [team, odds] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odds of ${teamStr}: ${odds}`);
+}
