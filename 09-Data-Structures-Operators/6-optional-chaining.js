@@ -32,3 +32,30 @@ const restaurant = {
     },
   },
 };
+
+// console.log(restaurant.openingHours.mon.open);
+
+if (restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+}
+
+// OPTIONAL CHAINING - If a certain property doesn't exist, returns undefined immediately
+console.log(restaurant.openingHours.mon?.open);
+// only if mon exists, then the open property will be checked
+// a Property exists if its not nullish (not null or undefined)
+
+// Example
+const days = ['mon', 'tues', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}.`);
+}
+
+// Optional Chaining in methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+let users = [{ name: 'Jonas', email: 'hello@hona.io' }];
+// users = [];
+console.log(users[0]?.name ?? 'User array empty');
