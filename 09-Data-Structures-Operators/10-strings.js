@@ -6,6 +6,9 @@ const flights =
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
+//////////////////////////////////////////////
+// WORKING WITH STRINGS - Part 1
+
 console.log(plane[0]); // A
 console.log(plane[1]); // 3
 console.log(plane[2]); // 2
@@ -55,3 +58,66 @@ console.log(new String('Uzair')); // String object
 console.log(typeof new String('Uzair')); // object
 console.log(typeof 'Uzair'); // string
 console.log(typeof new String('Uzair').slice(1)); // string
+
+console.log(airline.toLowerCase()); // tap air portugal
+console.log(airline.toUpperCase()); // TAP AIR PORTUGAL
+
+//////////////////////////////////////////
+// WORKING WITH STRINGS - Part 2
+
+// Example: Fix capitalization in name
+const passenger = 'uZaIr';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect = passenger[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect); // Uzair
+
+// Example: Compare emails
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.io  \n\t';
+const normalizedLoginEmail = loginEmail.toLowerCase().trim(); // 'hello@jonas.io'
+console.log(
+  email.toLowerCase() === normalizedLoginEmail
+    ? 'Correct email!'
+    : 'Incorrect email!'
+);
+
+// Replacing part of strings
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS); // '288.97$
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+// replace returns a String
+
+// Regular Expressions
+console.log(announcement.replace(/door/g, 'gate')); // changes all the occurrences instead of just the first
+
+// Boolea Returns (includes(), startsWith(), endsWith())
+const newPlane = 'Airbus A320neo';
+console.log(newPlane.includes('A320')); // true
+console.log(newPlane.includes('Boeing')); //false
+
+console.log(newPlane.startsWith('Air')); // true
+console.log(newPlane.startsWith('Aib')); // false
+
+if (newPlane.startsWith('Airbus') && newPlane.endsWith('neo')) {
+  console.log('Part of the new AirBus Family!');
+} else {
+  console.log('Part of old AirBus Family.');
+}
+
+// Practice Exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  const allowed =
+    baggage.includes('knife') || baggage.includes('gun')
+      ? 'You are NOT allowed on board.'
+      : 'Welcome Aboard!';
+  console.log(allowed);
+};
+
+checkBaggage('I have a Laptop, some Food, and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
