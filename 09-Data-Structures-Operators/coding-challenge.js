@@ -83,6 +83,7 @@ for (const [team, odds] of Object.entries(game.odds)) {
 */
 
 // CODING CHALLENGE 3
+/** 
 const gameEvents = new Map([
   [17, '⚽ GOAL'],
   [36, '🔄 Substitution'],
@@ -128,3 +129,46 @@ for (const [time, event] of gameEvents) {
       : `[SECOND HALF] ${time}: ${event}`
   );
 }
+*/
+
+//////////////////////////////////
+// CODING CHALLENGE #4
+/**
+ * Write a program that receives a list of variable names written in underscore_case and convert them to camelCase
+ * -- Input will come from a textarea insertinto the DOM, and conversion will happen when the button is pressed.
+ */
+/** 
+const inputAreaText = document.querySelector('.input-text-section');
+function toCamelCase() {
+  const underscoreCase = inputAreaText.value.toLowerCase().trim();
+  const splitArr = underscoreCase.split('_');
+  console.log(splitArr);
+  let camelCaseArr = [];
+  camelCaseArr.push(splitArr[0]);
+  console.log(camelCaseArr);
+
+  for (let i = 1; i < splitArr.length; i++) {
+    camelCaseArr.push(
+      splitArr[i][0].toUpperCase() + splitArr[i].slice(1).toLowerCase()
+    );
+  }
+  const camelCaseStr = camelCaseArr.join('');
+  alert(camelCaseStr);
+}
+*/
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+});
