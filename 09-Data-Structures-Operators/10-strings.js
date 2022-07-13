@@ -121,3 +121,37 @@ const checkBaggage = function (items) {
 checkBaggage('I have a Laptop, some Food, and a pocket Knife');
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and a gun for protection');
+
+///////////////////////////////
+// WORKING WITH STRINGS - PART 3
+console.log('a+very+nice+string'.split('+')); // returns an array with the split array based on the divider
+console.log('Uzair Mohiuddin'.split(' '));
+
+const [firstName, lastName] = 'Uzair Mohiuddin'.split(' ');
+console.log(firstName, lastName);
+
+// join() returns a string given an array
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  for (const n of names) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1).toLowerCase());
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('jonas schmedtmann');
+capitalizeName('uzair mohiuddin');
+
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(30, '+')); // 25 is the lenght you want the string to be with the added apdding
+console.log('Uzair'.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + ''; // implicitly converts the number to a string
+};
