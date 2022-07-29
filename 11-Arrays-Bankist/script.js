@@ -61,16 +61,33 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
+const displayMovements = function (movements) {
+  movements.forEach(function (mov, i) {
+    const movements_row = document.createElement('div');
+    movements_row.classList.add('movements__row');
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+    const movements_type = document.createElement('div');
+    const movements_date = document.createElement('div');
+    const movements_value = document.createElement('div');
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+    movements_type.classList.add(
+      'movements__type',
+      `movements__type--${mov / 1 === -1 ? 'deposit' : 'withdrawal'}`
+    );
+    movements_date.classList.add('movement__date');
+    movements_value.classList.add('movements__value');
+
+    movements_value.appendChild(document.createTextNode(`${mov}€`));
+
+    movements_row.appendChild(movements_type);
+    movements_row.appendChild(movements_date);
+    movements_row.appendChild(movements_value);
+
+    const elem = document.querySelector('.movements');
+    elem.appendChild(movements_row);
+  });
+};
+
+displayMovements(account1.movements);
 
 /////////////////////////////////////////////////
