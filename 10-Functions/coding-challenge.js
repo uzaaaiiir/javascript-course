@@ -53,3 +53,12 @@ document
 poll.displayResults.call({ numberOfReplies: [5, 2, 3] });
 poll.displayResults.call({ numberOfReplies: [5, 2, 3] }, 'string');
 poll.displayResults.call({ numberOfReplies: [1, 5, 3, 2, 9, 6] }, 'string');
+
+/** CODING CHALLENGE 2 */
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+  document.body.addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})();
