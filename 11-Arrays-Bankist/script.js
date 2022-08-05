@@ -62,29 +62,20 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 const displayMovements = function (movements) {
+  containerMovements.innerHTML = '';
   movements.forEach(function (mov, i) {
-    const movements_row = document.createElement('div');
-    movements_row.classList.add('movements__row');
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
 
-    const movements_type = document.createElement('div');
-    const movements_date = document.createElement('div');
-    const movements_value = document.createElement('div');
+    const html = `
+    <div class="movements__row">
+      <div class="movements__type movements__type--${type}">${
+      i + 1
+    } ${type}</div>
+      <div class="movements__value">${mov}€</div>
+    </div>
+    `;
 
-    movements_type.classList.add(
-      'movements__type',
-      `movements__type--${mov / 1 === -1 ? 'deposit' : 'withdrawal'}`
-    );
-    movements_date.classList.add('movement__date');
-    movements_value.classList.add('movements__value');
-
-    movements_value.appendChild(document.createTextNode(`${mov}€`));
-
-    movements_row.appendChild(movements_type);
-    movements_row.appendChild(movements_date);
-    movements_row.appendChild(movements_value);
-
-    const elem = document.querySelector('.movements');
-    elem.appendChild(movements_row);
+    containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
 
