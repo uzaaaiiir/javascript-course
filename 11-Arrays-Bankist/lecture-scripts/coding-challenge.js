@@ -39,8 +39,6 @@ const averageHumanAgeOfDogs2 = function (dogAges) {
     .map(dogAge => (dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4))
     .filter(dogAge => dogAge >= 18)
     .reduce((acc, dogAge, i, arr) => acc + dogAge / arr.length, 0);
-
-  return average;
 };
 
 console.log(averageHumanAgeOfDogs(testData1));
