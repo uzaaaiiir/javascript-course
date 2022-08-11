@@ -226,6 +226,4 @@ btnSort.addEventListener('click', function (e) {
   sorted = !sorted;
 });
 
-displayMovements(account1.movements);
-createUsernames(accounts);
 /////////////////////////////////////////////////
