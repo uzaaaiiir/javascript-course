@@ -95,6 +95,7 @@ add(...x);
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
+
 /** SPREAD OPERATOR
  * -- Allows us to copy all or part of an interable into another array, object as individual elements
  * -- Unpacks an array
