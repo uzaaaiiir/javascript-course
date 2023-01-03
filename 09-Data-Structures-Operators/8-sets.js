@@ -70,5 +70,5 @@ const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
 const staffSet = [...new Set(staff)];
 console.log(staffSet);
 
-// Finding hte number of unique items in an iterable
+// Finding the number of unique items in an iterable
 console.log(new Set('uzairmohiuddin').size);

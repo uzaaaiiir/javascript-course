@@ -52,7 +52,7 @@ const [gk, ...fieldPlayers] = players1;
 const allPlayers = [...players1, ...players2];
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 const { team1, x: draw, team2 } = game.odds;
-team1 > team2 && console.log('Team 1 Wins!');
+team1 < team2 && console.log('Team 1 Wins!');
 
 console.log(players1, players2);
 console.log(gk, fieldPlayers);
