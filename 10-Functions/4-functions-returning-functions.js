@@ -9,6 +9,7 @@ const greet = function (greeting) {
 const greeterHey = greet('Hey');
 greeterHey('Uzair');
 greet('Hello')('Uzair');
+console.log(typeof greet('hello'));
 
 // Returning functions with Arrow Functions
 const greetArrow = greeting => name => {
