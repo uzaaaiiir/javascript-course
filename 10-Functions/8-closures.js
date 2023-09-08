@@ -10,6 +10,7 @@ const secureBooking = function () {
   };
 };
 
+// Retains access to the variables present in the parent scope even when it's done executing
 const booker = secureBooking();
 booker();
 booker();

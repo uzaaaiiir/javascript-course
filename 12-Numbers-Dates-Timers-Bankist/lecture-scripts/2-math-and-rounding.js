@@ -47,3 +47,18 @@ console.log((2.7).toFixed(0)); // "3"
 console.log((2.7).toFixed(3)); // "2.700"
 console.log((2.345).toFixed(2)); // "2.35"
 console.log(+(2.345).toFixed(2)); // 2.25
+
+// Remainder Operator
+console.log(5 % 2); // 1
+console.log(5 / 2); // 2.5 = 2 * 2 + 1
+
+console.log(8 % 3); // 2
+console.log(8 / 3); // 8 = 2 * 3 + 2
+
+console.log(6 % 2); // 0
+console.log(6 / 2); // 3 - No Remainder
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(8));
+console.log(isEven(23));
+console.log(isEven(514));
